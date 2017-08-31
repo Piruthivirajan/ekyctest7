@@ -1,0 +1,77 @@
+<br/>
+<a style="float:right;" class="btn btn-info" href="http://geekmatics.herokuapp.com">Logout</a>
+<br/><br/><br/><br/>
+	<div id="main-menu" class="navbar navbar-default navbar-fixed-top" role="navigation">
+				
+		<div class="navbar-header">
+			<!-- responsive navigation -->
+			<button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+				<span class="sr-only">Toggle navigation</span>
+				<i class="fa fa-bars"></i>
+			</button> <!-- /.navbar-toggle -->
+				
+		</div> <!-- /.navbar-header -->
+
+
+		<nav class="collapse navbar-collapse">
+			<!-- Main navigation -->
+			<ul id="headernavigation" class="nav navbar-nav">
+				<li class="active"><a href="https://geekmatics.herokuapp.com">Back</a></li>	
+			
+			</ul> <!-- /.nav .navbar-nav -->
+		</nav> <!-- /.navbar-collapse  -->
+	</div><!-- /#main-menu -->
+	<div style="width:100%;" class="pattern height-resize">
+		<h1>Total Participaters {{total}}</h1>
+<div style="float:right;color:#1ebeda;"><input type="checkbox"  [(ngModel)]="junk"> <label>Geek Junk</label>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+    <input type="checkbox"  [(ngModel)]="trix"> <label>Geek Trix</label>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+     <input type="checkbox"  [(ngModel)]="face"> <label>Geek Face</label>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+     <input type="checkbox"  [(ngModel)]="adz"> <label>Geek Adz</label> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+    <input type="checkbox"  [(ngModel)]="zorro"> <label>Geek Zorro</label>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+        <input type="checkbox"  [(ngModel)]="mesh"> <label>Geek Mesh</label>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+    
+    <input type="checkbox"  [(ngModel)]="quiz"> <label>Geek Quiz</label>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+    <input type="checkbox"  [(ngModel)]="tango">  <label>Geek Tango</label>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+
+<button _ngcontent-c3="" class="btn btn-success" id="csv" (click)="export()">Export CSV</button>&nbsp;
+<button _ngcontent-c3="" class="btn btn-success" id="csv" (click)="exportEvent()">Export All</button>
+</div>
+
+<table class="table table-bordered">
+		  <thead>
+			<tr>
+			  <td>S.No</td>
+              <td>Event</td>
+							 <td>College</td>
+        	  <td>Participate Name1-Departement</td>
+              	  <td>Participate Name2-Departement</td>
+                    
+               <td>Contact1</td>
+        	  <td>Email1</td>
+               <td>Contact2</td>
+        	  <td>Email2</td>
+			  <td width="200" align="center">Action</td>
+			</tr>
+		  </thead>
+		  <tbody>
+			 <tr  *ngFor="let register of registers;let myIndex = index">
+        <td>{{myIndex+1}}</td>
+				<td>{{register.event}}</td> 
+				<td>{{register.clgname}}</td> 
+				<td>{{register.pname1}}-{{register.dept1}}</td>
+				<td>{{register.pname2}}-{{register.dept2}}</td>
+				<td>{{register.contact1}}</td>
+                <td>{{register.email1}}</td>
+                
+                <td>{{register.contact2}}</td>
+                <td>{{register.email2}}</td>
+      
+				<td width="275"> 
+					
+					<a class="btn btn-danger" (click)="delete(register.id)">Delete</a>
+				</td>
+			 </tr>
+		  </tbody>
+		</table>
+<br/><br/>
+</div>
