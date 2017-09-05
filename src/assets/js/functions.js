@@ -68,7 +68,7 @@ jQuery(document).ready(function($) {
          targetDate: {
             'day':      1,
             'month':    9,
-            'year':     2017,
+            'year':     2018,
             'hour':     0,
             'min':      0,
             'sec':      0
